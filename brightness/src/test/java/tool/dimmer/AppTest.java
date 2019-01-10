@@ -1,4 +1,4 @@
-package tool.brightness;
+package tool.dimmer;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
