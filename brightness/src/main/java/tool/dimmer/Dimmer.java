@@ -32,6 +32,12 @@ import com.sun.jna.platform.win32.WinDef;
 import com.sun.jna.platform.win32.WinDef.HWND;
 import com.sun.jna.platform.win32.WinUser;
 
+/**
+ * Dimmer is simple class which provides an adjustable semi-transparent layer to filter light below minimum monitor
+ * brightness level.
+ *
+ * @author RandomCatGit
+ */
 public class Dimmer {
 
 	static JDialog filter = new JDialog();
