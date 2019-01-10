@@ -1,4 +1,4 @@
-package tool.brightness;
+package tool.dimmer;
 
 import java.awt.AWTException;
 import java.awt.Color;
@@ -32,10 +32,6 @@ import com.sun.jna.platform.win32.WinDef;
 import com.sun.jna.platform.win32.WinDef.HWND;
 import com.sun.jna.platform.win32.WinUser;
 
-/**
- * Hello world!
- *
- */
 public class Dimmer {
 
 	static JDialog filter = new JDialog();
@@ -124,10 +120,6 @@ public class Dimmer {
 		showFilter();
 	}
 
-	/**
-	 * setupSettings method is used for
-	 * 
-	 */
 	private static void setupSettings() {
 		settings.setIconImage(new ImageIcon("dimmer.png").getImage());
 		Rectangle d = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
@@ -140,12 +132,6 @@ public class Dimmer {
 		settings.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	}
 
-	/**
-	 * addSlider method is used for
-	 * 
-	 * @param settings
-	 * 
-	 */
 	private static void addSlider() {
 		final JSlider sl = new JSlider(SwingConstants.HORIZONTAL, 0, 100, 50);
 		sl.setBounds(20, 0, 200, 60);
@@ -165,7 +151,6 @@ public class Dimmer {
 		filter.setTitle("Screen Brightness Regulator");
 		filter.setBounds(GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds());
 		filter.setUndecorated(true);
-//		filter.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		filter.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.5f));
 		filter.setAlwaysOnTop(true);
 		filter.setVisible(true);
