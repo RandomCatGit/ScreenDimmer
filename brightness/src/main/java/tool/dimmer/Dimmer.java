@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
+import java.awt.event.WindowFocusListener;
 import java.awt.event.WindowListener;
 
 import javax.swing.ImageIcon;
@@ -72,6 +73,16 @@ public class Dimmer {
 		popup.add(exit);
 		trayIcon.setPopupMenu(popup);
 		tray.add(trayIcon);
+		
+		settings.addWindowFocusListener(new WindowFocusListener() {
+			
+			public void windowLostFocus(WindowEvent e) {
+				settings.setState(Frame.NORMAL);
+			}
+			
+			public void windowGainedFocus(WindowEvent e) {
+			}
+		});
 
 		settings.addWindowListener(new WindowListener() {
 
@@ -117,6 +128,7 @@ public class Dimmer {
 				if (e.getClickCount() == 2) {
 					settings.setVisible(true);
 					settings.setState(Frame.NORMAL);
+					settings.toFront();
 				}
 			}
 		});
