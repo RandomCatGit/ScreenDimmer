@@ -9,6 +9,7 @@ import java.awt.MenuItem;
 import java.awt.PopupMenu;
 import java.awt.Rectangle;
 import java.awt.SystemTray;
+import java.awt.Toolkit;
 import java.awt.TrayIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -168,7 +169,7 @@ public class Dimmer {
 
 	private static void showFilter() {
 		filter.setTitle("Screen Brightness Regulator");
-		filter.setBounds(GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds());
+		filter.setBounds(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
 		filter.setUndecorated(true);
 		filter.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.5f));
 		filter.setAlwaysOnTop(true);
