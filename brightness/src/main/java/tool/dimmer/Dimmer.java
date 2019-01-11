@@ -73,13 +73,13 @@ public class Dimmer {
 		popup.add(exit);
 		trayIcon.setPopupMenu(popup);
 		tray.add(trayIcon);
-		
+
 		settings.addWindowFocusListener(new WindowFocusListener() {
-			
+
 			public void windowLostFocus(WindowEvent e) {
-				settings.setState(Frame.NORMAL);
+				settings.setVisible(false);
 			}
-			
+
 			public void windowGainedFocus(WindowEvent e) {
 			}
 		});
@@ -141,17 +141,18 @@ public class Dimmer {
 	private static void setupSettings() {
 		settings.setIconImage(new ImageIcon("dimmer.png").getImage());
 		Rectangle d = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
-		settings.setBounds((int) d.getWidth() - 260, (int) d.getHeight() - 100, 260, 100);
+		settings.setBounds((int) d.getWidth() - 240, (int) d.getHeight() - 100, 240, 100);
 		settings.setTitle("Screen Brightness Settings");
 		settings.setExtendedState(JFrame.ICONIFIED);
 		settings.setLayout(null);
 		settings.setResizable(false);
 		settings.setAutoRequestFocus(true);
 		settings.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		settings.setAlwaysOnTop(true);
 	}
 
 	private static void addSlider() {
-		final JSlider sl = new JSlider(SwingConstants.HORIZONTAL, 0, 100, 50);
+		final JSlider sl = new JSlider(SwingConstants.HORIZONTAL, 0, 99, 50);
 		sl.setBounds(20, 0, 200, 60);
 		settings.add(sl);
 
